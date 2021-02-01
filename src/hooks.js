@@ -24,14 +24,14 @@ const useFlip = (initialState=true) => {
 // Once you’ve written this hook, refactor PlayingCardList to use this custom hook. (Don’t worry about PokeDex for now - that’s coming in the next part!
 
 // Step Four: useAxios in PokeDex
-const useAxios = async (url) => {
+const useAxios = (baseUrl) => {
     const [data, setData] = useState([])
     const addResponseData = async () => {
-        const res = await axios.get(url)
+        const res = await axios.get(baseUrl)
         setData(data => [...data, res.data])
     }
 
-
+    console.log(addResponseData)
     return [data, addResponseData]
 }
 
